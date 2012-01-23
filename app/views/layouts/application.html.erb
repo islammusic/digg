@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Digg</title>
+  <title>Digg - <%= @title %></title>
   <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "blueprint/screen", :media => 'screen' %>
+  <%= stylesheet_link_tag    "blueprint/print", :media => 'print'  %>
+  
+  <%= stylesheet_link_tag    "custom", :media => 'screen'  %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header>
+		<nav class="round">
+			<ul>
+				<li><%= link_to "Domov", root_path %></li>
+				<li><%= link_to "Kontakt", contact_path %></li>
+				<li><%= link_to "O nas", about_path %></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="content">
+		<%= yield %>
+	</div>
+	<footer>
+		<nav class="round">
+			<ul>
+				<li><%= link_to "Stran izdelal", '#' %></li>
+				<li><%= link_to "Validation", '#' %></li>
+			</ul>
+		</nav>
+	</footer>
 </body>
 </html>
