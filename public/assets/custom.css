@@ -1,0 +1,31 @@
+body
+{
+    background: #cc99df;
+}
+.content 
+{
+    width:690px;
+    margin: 0 auto;
+}
+.round /* ozadje navigacije z zarobljenimi koti */
+{
+    background: #222;
+    width: 690px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin:10px auto;
+
+}
+.round ul li
+{
+    list-style: none;
+    float:left;
+    padding: 3px;
+    background: yellow;
+}
+
+.clear /* class ki  */
+{
+    clear:both;
+}

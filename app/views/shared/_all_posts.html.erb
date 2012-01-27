@@ -1,0 +1,8 @@
+<% @posts.each do |p|%>
+	<%= p.id %>
+	<%= p.title %>
+	<%= p.url %> 
+	<%= p.content %> 
+	(<%= p.user.surname %>)
+	<br />
+<% end %>

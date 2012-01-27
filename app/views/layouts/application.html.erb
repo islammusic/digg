@@ -17,10 +17,22 @@
 				<li><%= link_to "Domov", root_path %></li>
 				<li><%= link_to "Kontakt", contact_path %></li>
 				<li><%= link_to "O nas", about_path %></li>
+				<li><%= link_to "Uporaniki", users_path %></li>
+				<li><%= link_to "Registracija", registration_path %></li>
+				<% if signed_in? %>
+					<li><%= link_to "Odjava", logout_path %></li>
+					<li><%= whois %></li>
+				<% else  %>
+					<li><%= link_to "Prijava", login_path %></li>
+				<% end  %>
 			</ul>
+			<div class="clear" />
 		</nav>
 	</header>
 	<div class="content">
+		<% flash.each do |key, value|%>
+			<div class="flash <%= key %>"><%= value %></div>
+		<% end %>
 		<%= yield %>
 	</div>
 	<footer>
@@ -29,6 +41,7 @@
 				<li><%= link_to "Stran izdelal", '#' %></li>
 				<li><%= link_to "Validation", '#' %></li>
 			</ul>
+			<div class="clear" />
 		</nav>
 	</footer>
 </body>

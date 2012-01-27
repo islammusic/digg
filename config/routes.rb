@@ -1,12 +1,21 @@
 Digg::Application.routes.draw do
-  
+    
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :posts, :only => [:create, :destroy]
+  resources :users
+
+  match '/login', :to => 'sessions#new'
+  match '/logout', :to => 'sessions#destroy'
+
+  match '/registration', :to => 'users#new'
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   
   root :to => 'pages#home'
   
+  #get "sessions/new"
   #get "pages/home"
-
+  #get "users/new"
   #get "pages/contact"
 
   # The priority is based upon order of creation:
